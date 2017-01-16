@@ -1,0 +1,11 @@
+.main-manage-url {
+    font-weight: lighter;
+    color: #0199cc;
+}
+.main-manage-url:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #0199cc;
+}
+
+

@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Main Page</title>
-</head>
-<body>
-    <p>This is the main page</p>
-    <a href="#accessManage">Change Page</a>
-</body>
-</html>
+<div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>数据编号</th>
+            <th>数据名</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="data in dataList">
+            <th>{{data.dataId}}</th>
+            <th>{{data.dataName}}</th>
+            <th><a class="main-manage-url" href="#accessManage/{{data.dataId}}">管理</a></th>
+        </tr>
+        </tbody>
+    </table>
+</div>

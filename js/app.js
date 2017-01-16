@@ -13,7 +13,7 @@ myApp.config(['$stateProvider', '$urlRouterProvider', function ( $stateProvider,
       })
 
       .state('accessManage', {
-          url: '/accessManage',
+          url: '/accessManage/:dataId',
           abstract: true,
           templateUrl: 'templates/access-manage.html'
       })
