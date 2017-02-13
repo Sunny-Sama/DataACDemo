@@ -14,17 +14,17 @@
     text-align: center;
 }
 
-.user-ac-delete {
+.ac-delete {
     border: none;
     color: red;
     background-color: white;
-    padding:0px;
 }
 
-.user-ac-state {
+.ac-state {
     border: none;
     color: #0199cc;
     background-color: white;
+    font-weight: 500;
 }
 
 .form-control {
@@ -33,6 +33,20 @@
     margin-right: 15px;
 }
 
-.user-ac-operation {
+.ac-operation {
     margin-bottom: 20px;
+}
+.btn.btn-default.ac-search{
+    background-color: rgba(1, 178, 213, 0.83);
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+
+.btn.btn-default.ac-add{
+    background-color: rgba(250, 163, 61, 0.9);
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin-left:15px;
 }

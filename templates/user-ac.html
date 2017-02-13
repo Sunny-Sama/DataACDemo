@@ -11,13 +11,27 @@
             </div>
             <div id="white-list" class="panel-collapse collapse in">
                 <div class="panel-body">
-                    <div class="user-ac-operation">
+                    <div class="ac-operation">
+                        <div id="example" class="modal hide fade in" style="display: none; ">
+                            <div class="modal-header">
+                                <a class="close" data-dismiss="modal">×</a>
+                                <h3>This is a Modal Heading</h3>
+                            </div>
+                            <div class="modal-body">
+                                <h4>Text in a modal</h4>
+                                <p>You can add some text here.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#" class="btn btn-success">Call to action</a>
+                                <a href="#" class="btn" data-dismiss="modal">Close</a>
+                            </div>
+                        </div>
                         <form role="search">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="请输入查询内容" id="keyValue" required>
+                                <input type="text" class="form-control" placeholder="请输入查询内容" id="whiteKeyValue">
                             </div>
-                            <button type="submit" class="btn btn-default" ng-click="search()">查询</button>
-                            <button class="btn btn-default" ng-click="addWhite()">新增</button>
+                            <button type="submit" class="btn btn-default ac-search" ng-click="searchWhite()">查询</button>
+                            <a class="btn btn-default ac-add" data-toggle="modal" href="#example">新增</a>
                         </form>
                     </div>
                     <table class="table">
@@ -31,9 +45,8 @@
                         <tbody class="ac-list">
                         <tr ng-repeat="item in whiteList">
                             <th>{{item.userName}}</th>
-                            <th ng-if="item.state == 1" style="padding-left:18px"><button class="user-ac-state">强制</button></th>
-                            <th ng-if="item.state == 0" style="padding-left:18px"><button class="user-ac-state">推荐</button></th>
-                            <th><button class="user-ac-delete">删除</button></th>
+                            <th style="padding-left:18px"><button class="ac-state" ng-click="changeState()">{{item.state==1?"强制":"推荐"}}</button></th>
+                            <th><button class="ac-delete"><span class="glyphicon glyphicon-trash" ng-click="deleteWhite()"></span></button></th>
                         </tr>
                         </tbody>
                     </table>
@@ -51,9 +64,29 @@
             </div>
             <div id="black-list" class="panel-collapse collapse">
                 <div class="panel-body">
-                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                    cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                    vice lomo.
+                    <div class="ac-operation">
+                        <form role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="请输入查询内容" id="blackKeyValue">
+                            </div>
+                            <button type="submit" class="btn btn-default ac-search" ng-click="searchBlack()">查询</button>
+                            <a class="btn btn-default ac-add" href="#addBlack">新增</a>
+                        </form>
+                    </div>
+                    <table class="table">
+                        <thead class="ac-list">
+                        <tr>
+                            <th>用户名</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody class="ac-list">
+                        <tr ng-repeat="item in blackList">
+                            <th>{{item.userName}}</th>
+                            <th><button class="ac-delete"><span class="glyphicon glyphicon-trash" ng-click="deleteBlack()"></span></button></th>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
