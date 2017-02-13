@@ -1,0 +1,38 @@
+.panel-title>a {
+    text-decoration: none;
+}
+.panel-title>a:hover{
+    text-decoration: none;
+}
+
+.panel.panel-default {
+    margin-top: 20px;
+}
+.ac-list tr{
+    color: gray;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.user-ac-delete {
+    border: none;
+    color: red;
+    background-color: white;
+    padding:0px;
+}
+
+.user-ac-state {
+    border: none;
+    color: #0199cc;
+    background-color: white;
+}
+
+.form-control {
+    width: 200px;
+    float: left;
+    margin-right: 15px;
+}
+
+.user-ac-operation {
+    margin-bottom: 20px;
+}

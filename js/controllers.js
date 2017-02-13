@@ -16,7 +16,7 @@ angular.module('myApp.controllers', [])
                 }
             })
             .error(function(){
-                alert('http error');
+                alert('http error: 不能获取数据列表');
             });
     }
 
@@ -46,8 +46,41 @@ angular.module('myApp.controllers', [])
 
 angular.module('accessManage.controllers', [])
 
-.controller('userACCtrl', function($rootScope, $scope, $stateParams){
+.controller('userACCtrl', function($rootScope, $scope, $http, $stateParams){
     $rootScope.currentId = $stateParams.dataId;
+    $scope.whiteList = [
+        {
+            userName: 'user1',
+            state: '1' //强制1
+        },
+        {
+            userName: 'user2',
+            state: '1'
+        },
+        {
+            userName: 'user3',
+            state: '0'
+        },
+        {
+            userName: 'user4',
+            state: '1'
+        }
+    ];
+
+    var getWhiteList = function(){
+        $http.get('http://' + $rootScope.hostUrl + '8080/DataACServer/getWhiteList', {param:{dataId: $rootScope.currentId}})
+            .success(function(ret){
+                if(ret != null && ret[0] != null) {
+                    $scope.whiteList = ret;
+                }
+                else {
+                    $scope.whiteList = null;
+                }
+            })
+            .error(function(){
+              alert('http error: 不能获取白名单');
+            });
+    }
 
 })
 
