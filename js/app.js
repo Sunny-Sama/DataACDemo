@@ -31,22 +31,4 @@ myApp.config(['$stateProvider', '$urlRouterProvider', function ( $stateProvider,
           templateUrl: 'templates/attribute-ac.html',
           controller: 'attributeACCtrl'
       })
-
-      .state('addWhite', {
-          url: '/addWhite',
-          templateUrl: 'templates/add-white-user.html',
-          controller: 'addWhiteCtrl'
-      })
-
-      .state('addBlack', {
-          url: '/addBlack',
-          templateUrl: 'templates/add-black-user.html',
-          controller: 'addBlackCtrl'
-      })
-
-      .state('addAttr', {
-          url: '/addAttr',
-          templateUrl: 'templates/add-attr.html',
-          controller: 'addAttrCtrl'
-      })
 }]);

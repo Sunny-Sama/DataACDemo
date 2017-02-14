@@ -50,3 +50,17 @@
     font-weight: bold;
     margin-left:15px;
 }
+
+#addWhiteKey, #addBlackKey, #addAttrRole{
+    width:300px;
+    margin-left: 30px;
+}
+
+.ac-p, .ac-div{
+    margin-left: 30px;
+    color: gray;
+}
+
+.ac-p {
+    font-weight: 600;
+}

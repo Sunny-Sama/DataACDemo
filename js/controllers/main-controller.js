@@ -42,15 +42,4 @@ angular.module('myApp.controllers', [])
                 dataSecretLvl: 2
             }];
 
-    })
-    .controller('addWhiteCtrl', function () {
-    
-    })
-    .controller('addBlackCtrl', function (){
-
-    })
-
-    .controller('addAttrCtrl', function(){
-
-    })
-;
+    });
