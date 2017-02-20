@@ -31,16 +31,16 @@
                                 </div>
                                 <div class="modal-body">
                                     <p class="ac-p">用户名：</p>
-                                    <input type="text" id="addWhiteKey" placeholder="请输入用户名">
+                                    <input type="text" id="addWhiteKey" placeholder="请输入用户名"/>
                                     <p></p>
                                     <form>
                                         <P class="ac-p">状态：</P>
                                         <div class="ac-div">
-                                            <input type="radio" checked="checked" name="state" value="force" style="margin-right:5px;"/>强制
-                                            <input type="radio" name="state" value="recommend" style="margin-left: 20px; margin-right:5px;"/>推荐
+                                            <input type="radio" name="state" value="force" style="margin-right:5px;"/>强制
+                                            <input type="radio" checked="checked" name="state" value="recommend" style="margin-left: 20px; margin-right:5px;"/>推荐
                                         </div>
                                     </form>
-                                    <div class="error-message"></div>
+                                    <div class="error-message" id="white-error"></div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default ac-add" ng-click="addWhite()">新增</button>
@@ -60,8 +60,8 @@
                         <tbody class="ac-list">
                         <tr ng-repeat="item in whiteList">
                             <th>{{item.userName}}</th>
-                            <th style="padding-left:18px"><button class="ac-state" ng-click="changeState()">{{item.state==1?"强制":"推荐"}}</button></th>
-                            <th><button class="ac-delete"><span class="glyphicon glyphicon-trash" ng-click="deleteWhite()"></span></button></th>
+                            <th style="padding-left:18px"><button class="ac-state" ng-click="changeState(item.ruleId)">{{item.state==1?"强制":"推荐"}}</button></th>
+                            <th><button class="ac-delete"><span class="glyphicon glyphicon-trash" ng-click="deleteWhite(item.ruleId)"></span></button></th>
                         </tr>
                         </tbody>
                     </table>
@@ -101,7 +101,7 @@
                                     <p class="ac-p">用户名：</p>
                                     <input type="text" id="addBlackKey" placeholder="请输入用户名"/>
                                     <p></p>
-                                    <div class="error-message"></div>
+                                    <div class="error-message" id="black-error"></div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default ac-add" ng-click="addBlack()">新增</button>
@@ -120,7 +120,7 @@
                         <tbody class="ac-list">
                         <tr ng-repeat="item in blackList">
                             <th>{{item.userName}}</th>
-                            <th><button class="ac-delete"><span class="glyphicon glyphicon-trash" ng-click="deleteBlack()"></span></button></th>
+                            <th><button class="ac-delete"><span class="glyphicon glyphicon-trash" ng-click="deleteBlack(item.ruleId)"></span></button></th>
                         </tr>
                         </tbody>
                     </table>

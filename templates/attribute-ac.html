@@ -34,7 +34,14 @@
                         结束时间<input type="time" name="endTime" value="23:59" style="width: 100px; margin-left:20px;"/>
                         <p></p>
                     </div>
-                    <div class="error-message"></div>
+                    <form>
+                        <P class="ac-p">状态：</P>
+                        <div class="ac-div">
+                            <input type="radio" name="state" value="force" style="margin-right:5px;"/>强制
+                            <input type="radio" checked="checked" name="state" value="recommend" style="margin-left: 20px; margin-right:5px;"/>推荐
+                        </div>
+                    </form>
+                    <div class="error-message" id="attr-error"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default ac-add" ng-click="addAttr()">新增</button>
@@ -56,8 +63,8 @@
         <tr ng-repeat="item in attrList">
             <th>{{item.userRole==0?"管理员":"租户"}}</th>
             <th>{{item.startTime}}-{{item.endTime}}</th>
-            <th style="padding-left:18px"><button class="ac-state" ng-click="changeState()">{{item.state==1?"强制":"推荐"}}</button></th>
-            <th><button class="ac-delete"><span class="glyphicon glyphicon-trash" ng-click="deleteAttr()"></span></button></th>
+            <th style="padding-left:18px"><button class="ac-state" ng-click="changeState(item.ruleId)">{{item.state==1?"强制":"推荐"}}</button></th>
+            <th><button class="ac-delete"><span class="glyphicon glyphicon-trash" ng-click="deleteAttr(item.ruleId)"></span></button></th>
         </tr>
         </tbody>
     </table>

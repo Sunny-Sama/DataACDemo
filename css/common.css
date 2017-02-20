@@ -4,3 +4,9 @@
     margin-right: auto;
     margin-top: 60px;
 }
+
+.error-message {
+    color: red;
+    margin-left: 50px;
+    margin-top: 1em;
+}
